@@ -1,38 +1,42 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Indian Laws</title>
+    <title>Law Search</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
-        header { background: #333; color: #fff; padding: 15px; text-align: center; font-size: 24px; }
-        nav { text-align: center; padding: 10px; }
-        nav a { margin: 0 15px; text-decoration: none; color: #333; font-weight: bold; }
-        section { padding: 20px; }
-        footer { background: #333; color: #fff; text-align: center; padding: 10px; position: fixed; bottom: 0; width: 100%; }
+        #searchBox {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
-    <header>
-        Indian Law & Rights - Laws
-    </header>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="laws.html">Laws</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-    <section>
-        <h2>Basic Indian Laws</h2>
-        <ul>
-            <li><strong>IPC Section 420:</strong> Cheating and dishonestly inducing delivery of property.</li>
-            <li><strong>Consumer Protection Act:</strong> Protects consumers from unfair trade practices.</li>
-            <li><strong>IT Act 2000:</strong> Cyber laws and digital fraud protection.</li>
-        </ul>
-    </section>
-    <footer>
-        &copy; 2025 Indian Law & Rights. All Rights Reserved.
-    </footer>
+    <h2>Indian Laws</h2>
+    
+    <!-- Search Box -->
+    <input type="text" id="searchBox" placeholder="Search laws..." onkeyup="searchLaws()">
+
+    <!-- Existing Laws List -->
+    <ul id="lawsList">
+        <li>Article 14 - Right to Equality</li>
+        <li>Article 19 - Freedom of Speech</li>
+        <li>Article 21 - Right to Life</li>
+        <li>Article 32 - Right to Constitutional Remedies</li>
+    </ul>
+
+    <!-- JavaScript -->
+    <script>
+        function searchLaws() {
+            let input = document.getElementById("searchBox").value.toLowerCase();
+            let laws = document.getElementById("lawsList").getElementsByTagName("li");
+
+            for (let i = 0; i < laws.length; i++) {
+                let text = laws[i].innerText.toLowerCase();
+                laws[i].style.display = text.includes(input) ? "" : "none";
+            }
+        }
+    </script>
 </body>
 </html>
