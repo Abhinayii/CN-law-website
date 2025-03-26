@@ -5,6 +5,13 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    font-size: 20px; /* Bigger Text */
+}
+
+/* Increase Headings */
+h1, h2, h3 {
+    font-size: 26px; /* Bigger Headings */
+    font-weight: bold;
 }
 
 /* Laws List Styling */
@@ -15,15 +22,18 @@ ul#lawsList {
     list-style-type: none;
 }
 
+/* Increase List Items Font */
 ul#lawsList li {
-    padding: 8px;
+    font-size: 22px; /* Bigger Law Text */
+    padding: 12px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Search Box Styling */
 #searchBox {
+    font-size: 18px; /* Bigger Search Box Text */
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     margin: 10px 0;
     background: #333;
     color: white;
