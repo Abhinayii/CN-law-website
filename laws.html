@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <h2>Indian Laws</h2>
+    <h2>Indian Laws & Rights</h2>
 
     <!-- Background Music -->
     <audio id="bgMusic" loop>
@@ -22,55 +22,55 @@
     <!-- Search Box -->
     <input type="text" id="searchBox" placeholder="Search laws..." onkeyup="searchLaws()">
 
-    <!-- Fundamental Rights -->
-    <h3>Fundamental Rights</h3>
+    <!-- Law Description Display -->
+    <div id="lawDescription" style="background: rgba(255, 255, 255, 0.1); padding: 15px; border-radius: 10px; margin-top: 20px;">
+        <strong>Click on a law to view details and famous cases.</strong>
+    </div>
+
+    <!-- Women's Rights -->
+    <h3>Women's Rights</h3>
     <ul class="lawsList">
-        <li>Article 14 - Right to Equality</li>
-        <li>Article 19 - Freedom of Speech</li>
-        <li>Article 21 - Right to Life</li>
-        <li>Article 25 - Right to Freedom of Religion</li>
-        <li>Article 32 - Right to Constitutional Remedies</li>
+        <li onclick="showLawInfo('Protection of Women from Domestic Violence Act, 2005', 'Provides protection to women from domestic abuse.', 'Indra Sarma v. V.K.V. Sarma (2013) - Defined live-in relationships under this law.')">Protection of Women from Domestic Violence Act, 2005</li>
+        <li onclick="showLawInfo('Dowry Prohibition Act, 1961', 'Bans the giving or receiving of dowry.', 'State of Punjab v. Gurmit Singh (1996) - Strengthened anti-dowry laws.')">Dowry Prohibition Act, 1961</li>
+        <li onclick="showLawInfo('Section 498A IPC', 'Protects married women from cruelty by husband or relatives.', 'Arnesh Kumar v. State of Bihar (2014) - Guidelines for arrest under Section 498A.')">Section 498A IPC - Cruelty by Husband or Relatives</li>
+        <li onclick="showLawInfo('Sexual Harassment of Women at Workplace Act, 2013', 'Prevents sexual harassment at workplaces.', 'Vishaka v. State of Rajasthan (1997) - Laid foundation for this law.')">Sexual Harassment of Women at Workplace Act, 2013</li>
     </ul>
 
-    <!-- Criminal Laws (IPC) -->
-    <h3>Criminal Laws (IPC)</h3>
+    <!-- Girls' Rights -->
+    <h3>Girls' Rights</h3>
     <ul class="lawsList">
-        <li>Section 302 IPC - Punishment for Murder</li>
-        <li>Section 376 IPC - Punishment for Rape</li>
-        <li>Section 420 IPC - Cheating and Fraud</li>
-        <li>Section 498A IPC - Cruelty by Husband or Relatives</li>
-        <li>Section 144 CrPC - Power to Issue Prohibitory Orders</li>
+        <li onclick="showLawInfo('POCSO Act, 2012', 'Protects children from sexual offenses.', 'Independent Thought v. Union of India (2017) - Criminalized marital rape for minors.')">POCSO Act, 2012</li>
+        <li onclick="showLawInfo('Right to Free and Compulsory Education Act, 2009', 'Ensures free education for children up to 14 years.', 'Society for Unaided Private Schools v. UOI (2012) - Upheld 25% reservation for poor children.')">Right to Free and Compulsory Education Act, 2009</li>
+        <li onclick="showLawInfo('Child Marriage Prohibition Act, 2006', 'Prevents child marriages in India.', 'Lajja v. State of Rajasthan (2013) - Declared child marriage void.')">Child Marriage Prohibition Act, 2006</li>
     </ul>
 
-    <!-- Civil Laws -->
-    <h3>Civil Laws</h3>
+    <!-- Senior Citizens' Rights -->
+    <h3>Senior Citizens' Rights</h3>
     <ul class="lawsList">
-        <li>Article 39A - Equal Justice and Free Legal Aid</li>
-        <li>Article 44 - Uniform Civil Code</li>
-        <li>Right to Information Act, 2005</li>
-        <li>Consumer Protection Act, 2019</li>
-        <li>Contract Act, 1872</li>
+        <li onclick="showLawInfo('Maintenance and Welfare of Parents and Senior Citizens Act, 2007', 'Ensures maintenance of elderly by children.', 'Raj Kishore Mishra v. State of UP (2015) - Upheld rights of elderly parents.')">Maintenance and Welfare of Parents and Senior Citizens Act, 2007</li>
+        <li onclick="showLawInfo('Section 125 CrPC', 'Provides maintenance for elderly parents.', 'Kirtikant D. Vadodaria v. State of Gujarat (1996) - Defined maintenance scope.')">Section 125 CrPC - Maintenance for Parents</li>
     </ul>
 
-    <!-- Special Acts -->
-    <h3>Special Acts</h3>
+    <!-- Students' Rights -->
+    <h3>Students' Rights</h3>
     <ul class="lawsList">
-        <li>Dowry Prohibition Act, 1961</li>
-        <li>Juvenile Justice Act, 2015</li>
-        <li>SC/ST Prevention of Atrocities Act, 1989</li>
-        <li>Protection of Women from Domestic Violence Act, 2005</li>
-        <li>IT Act, 2000 - Cyber Laws</li>
+        <li onclick="showLawInfo('Right to Education Act, 2009', 'Ensures free education for children.', 'Mohini Jain v. State of Karnataka (1992) - Right to Education as a fundamental right.')">Right to Education Act, 2009</li>
+        <li onclick="showLawInfo('University Grants Commission Act, 1956', 'Regulates higher education institutions.', 'Government Regulation - Ensures quality education standards.')">University Grants Commission Act, 1956</li>
     </ul>
 
     <!-- JavaScript -->
     <script>
+        function showLawInfo(title, description, caseExample) {
+            document.getElementById("lawDescription").innerHTML = `<h3>${title}</h3><p>${description}</p><h4>Famous Case:</h4><p>${caseExample}</p>`;
+        }
+
         function searchLaws() {
             let input = document.getElementById("searchBox").value.toLowerCase();
-            let lists = document.querySelectorAll(".lawsList"); // Select all law lists
-            
+            let lists = document.querySelectorAll(".lawsList"); 
+
             lists.forEach(list => {
                 let laws = list.getElementsByTagName("li");
-                
+
                 for (let i = 0; i < laws.length; i++) {
                     let text = laws[i].innerText.toLowerCase();
                     laws[i].style.display = text.includes(input) ? "" : "none";
