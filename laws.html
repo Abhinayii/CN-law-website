@@ -1,50 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Law Search</title>
-    <style>
-        #searchBox {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <audio id="bgMusic" loop>
-    <source src="https://raw.githubusercontent.com/Abhinayii/CN-law-website/main/music.mp3" type="audio/mp3">
-    Your browser does not support the audio element.
-    </audio>
-    <audio id="bgMusic" autoplay loop muted>
-    <source src="https://raw.githubusercontent.com/Abhinayii/CN-law-website/main/Slava%20Funk%20-%20PagalMass.mp3" type="audio/mp3">
-    </audio>
+
     <h2>Indian Laws</h2>
-    
+
     <!-- Search Box -->
     <input type="text" id="searchBox" placeholder="Search laws..." onkeyup="searchLaws()">
 
-    <!-- Existing Laws List -->
+    <!-- Fundamental Rights -->
+    <h3>Fundamental Rights</h3>
     <ul id="lawsList">
         <li>Article 14 - Right to Equality</li>
         <li>Article 19 - Freedom of Speech</li>
         <li>Article 21 - Right to Life</li>
+        <li>Article 25 - Right to Freedom of Religion</li>
         <li>Article 32 - Right to Constitutional Remedies</li>
     </ul>
 
-    <!-- JavaScript -->
+    <!-- Criminal Laws (IPC) -->
+    <h3>Criminal Laws (IPC)</h3>
+    <ul id="lawsList">
+        <li>Section 302 IPC - Punishment for Murder</li>
+        <li>Section 376 IPC - Punishment for Rape</li>
+        <li>Section 420 IPC - Cheating and Fraud</li>
+        <li>Section 498A IPC - Cruelty by Husband or Relatives</li>
+        <li>Section 144 CrPC - Power to Issue Prohibitory Orders</li>
+    </ul>
+
+    <!-- Civil Laws -->
+    <h3>Civil Laws</h3>
+    <ul id="lawsList">
+        <li>Article 39A - Equal Justice and Free Legal Aid</li>
+        <li>Article 44 - Uniform Civil Code</li>
+        <li>Right to Information Act, 2005</li>
+        <li>Consumer Protection Act, 2019</li>
+        <li>Contract Act, 1872</li>
+    </ul>
+
+    <!-- Special Acts -->
+    <h3>Special Acts</h3>
+    <ul id="lawsList">
+        <li>Dowry Prohibition Act, 1961</li>
+        <li>Juvenile Justice Act, 2015</li>
+        <li>SC/ST Prevention of Atrocities Act, 1989</li>
+        <li>Protection of Women from Domestic Violence Act, 2005</li>
+        <li>IT Act, 2000 - Cyber Laws</li>
+    </ul>
+
+    <!-- JavaScript (Paste this before </body>) -->
     <script>
         function searchLaws() {
             let input = document.getElementById("searchBox").value.toLowerCase();
-            let laws = document.getElementById("lawsList").getElementsByTagName("li");
-
-            for (let i = 0; i < laws.length; i++) {
-                let text = laws[i].innerText.toLowerCase();
-                laws[i].style.display = text.includes(input) ? "" : "none";
-            }
+            let lists = document.querySelectorAll("ul"); // Select all <ul> elements
+            
+            lists.forEach(list => {
+                let laws = list.getElementsByTagName("li");
+                
+                for (let i = 0; i < laws.length; i++) {
+                    let text = laws[i].innerText.toLowerCase();
+                    laws[i].style.display = text.includes(input) ? "" : "none";
+                }
+            });
         }
     </script>
+
 </body>
 </html>
