@@ -10,12 +10,21 @@
 
     <h2>Indian Laws</h2>
 
+    <!-- Background Music -->
+    <audio id="bgMusic" loop>
+        <source src="https://raw.githubusercontent.com/Abhinayii/CN-law-website/main/Slava%20Funk%20-%20PagalMass.mp3" type="audio/mp3">
+    </audio>
+
+    <!-- Music Controls -->
+    <button onclick="playMusic()">Play Music</button>
+    <button onclick="pauseMusic()">Pause Music</button>
+
     <!-- Search Box -->
     <input type="text" id="searchBox" placeholder="Search laws..." onkeyup="searchLaws()">
 
     <!-- Fundamental Rights -->
     <h3>Fundamental Rights</h3>
-    <ul id="lawsList">
+    <ul class="lawsList">
         <li>Article 14 - Right to Equality</li>
         <li>Article 19 - Freedom of Speech</li>
         <li>Article 21 - Right to Life</li>
@@ -25,7 +34,7 @@
 
     <!-- Criminal Laws (IPC) -->
     <h3>Criminal Laws (IPC)</h3>
-    <ul id="lawsList">
+    <ul class="lawsList">
         <li>Section 302 IPC - Punishment for Murder</li>
         <li>Section 376 IPC - Punishment for Rape</li>
         <li>Section 420 IPC - Cheating and Fraud</li>
@@ -35,7 +44,7 @@
 
     <!-- Civil Laws -->
     <h3>Civil Laws</h3>
-    <ul id="lawsList">
+    <ul class="lawsList">
         <li>Article 39A - Equal Justice and Free Legal Aid</li>
         <li>Article 44 - Uniform Civil Code</li>
         <li>Right to Information Act, 2005</li>
@@ -45,7 +54,7 @@
 
     <!-- Special Acts -->
     <h3>Special Acts</h3>
-    <ul id="lawsList">
+    <ul class="lawsList">
         <li>Dowry Prohibition Act, 1961</li>
         <li>Juvenile Justice Act, 2015</li>
         <li>SC/ST Prevention of Atrocities Act, 1989</li>
@@ -53,11 +62,11 @@
         <li>IT Act, 2000 - Cyber Laws</li>
     </ul>
 
-    <!-- JavaScript (Paste this before </body>) -->
+    <!-- JavaScript -->
     <script>
         function searchLaws() {
             let input = document.getElementById("searchBox").value.toLowerCase();
-            let lists = document.querySelectorAll("ul"); // Select all <ul> elements
+            let lists = document.querySelectorAll(".lawsList"); // Select all law lists
             
             lists.forEach(list => {
                 let laws = list.getElementsByTagName("li");
@@ -67,6 +76,17 @@
                     laws[i].style.display = text.includes(input) ? "" : "none";
                 }
             });
+        }
+
+        // Music Player Functions
+        let music = document.getElementById("bgMusic");
+
+        function playMusic() {
+            music.play();
+        }
+
+        function pauseMusic() {
+            music.pause();
         }
     </script>
 
