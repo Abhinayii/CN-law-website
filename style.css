@@ -103,3 +103,14 @@ button:last-of-type {
     background: #ff7b00;
     color: white;
 }
+/* Footer Caption */
+footer {
+    margin-top: 30px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffcc00;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 10px;
+}
