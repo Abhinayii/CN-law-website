@@ -1,8 +1,32 @@
+/* Dark Theme */
 body {
+    background: #121212; /* Dark Background */
+    color: white; /* White Text */
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: url('https://raw.githubusercontent.com/Abhinayii/CN-law-website/refs/heads/main/Picsart_25-03-26_01-07-18-396.jpg') no-repeat center center fixed;
-    background-size: cover;
+}
+
+/* Laws List Styling */
+ul#lawsList {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 10px;
+    list-style-type: none;
+}
+
+ul#lawsList li {
+    padding: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Search Box Styling */
+#searchBox {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background: #333;
     color: white;
+    border: none;
+    border-radius: 5px;
 }
