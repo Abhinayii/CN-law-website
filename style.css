@@ -10,14 +10,14 @@ body {
 
 /* Headings */
 h2 {
-    font-size: 30px;
+    font-size: 32px;
     color: #00c3ff;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
 h3 {
-    font-size: 24px;
+    font-size: 26px;
     color: #ff7b00;
     border-bottom: 2px solid #ff7b00;
     padding-bottom: 5px;
@@ -25,17 +25,47 @@ h3 {
     margin-top: 20px;
 }
 
+/* Navigation Menu */
+nav {
+    text-align: center;
+    background: #222;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); /* Shadow Effect */
+}
+
+nav a {
+    text-decoration: none;
+    background: #00c3ff;  /* Neon Blue */
+    color: black;
+    font-size: 24px;  /* Bigger Font */
+    font-weight: bold;
+    padding: 15px 30px;
+    border-radius: 10px;
+    margin: 15px;
+    display: inline-block;
+    transition: 0.3s ease-in-out;
+}
+
+nav a:hover {
+    background: #ff7b00;  /* Orange on Hover */
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 123, 0, 0.7);
+}
+
 /* Search Box */
 #searchBox {
     width: 80%;
-    padding: 12px;
+    padding: 14px;
     margin: 10px 0;
     background: #333;
     color: white;
     border: 2px solid #00c3ff;
     border-radius: 5px;
-    font-size: 18px;
+    font-size: 20px;
     text-align: center;
+    box-shadow: 0 0 12px rgba(0, 195, 255, 0.6); /* Glowing Effect */
 }
 
 /* Law Description Box */
@@ -45,7 +75,7 @@ h3 {
     padding: 20px;
     border-radius: 10px;
     margin-top: 20px;
-    box-shadow: 0 0 10px rgba(0, 195, 255, 0.5);
+    box-shadow: 0 0 12px rgba(0, 195, 255, 0.5);
     transition: 0.3s ease-in-out;
 }
 
@@ -60,57 +90,67 @@ h3 {
 
 .lawsList li {
     background: #222;
-    padding: 15px;
-    margin: 10px;
-    border-radius: 10px;
-    width: 300px;
+    padding: 18px;
+    margin: 12px;
+    border-radius: 12px;
+    width: 320px;
     text-align: center;
-    font-size: 18px;
-    transition: 0.3s;
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    font-size: 20px;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 5px 10px rgba(255, 255, 255, 0.1);
     cursor: pointer;
     border: 2px solid transparent;
+    transform: scale(1);
 }
 
 .lawsList li:hover {
     background: #00c3ff;
     color: black;
     border: 2px solid #ffffff;
+    transform: scale(1.05); /* Smooth Hover Effect */
+    box-shadow: 0 0 15px rgba(0, 195, 255, 0.8);
 }
 
 /* Buttons */
 button {
-    padding: 10px 20px;
-    margin: 10px;
+    padding: 12px 22px;
+    margin: 12px;
     border: none;
-    border-radius: 5px;
-    font-size: 16px;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
 }
 
 button:hover {
     opacity: 0.8;
+    transform: scale(1.05);
 }
 
 /* Music Buttons */
 button:first-of-type {
     background: #00c3ff;
     color: black;
+    box-shadow: 0 0 10px rgba(0, 195, 255, 0.8);
 }
 
 button:last-of-type {
     background: #ff7b00;
     color: white;
+    box-shadow: 0 0 10px rgba(255, 123, 0, 0.8);
 }
+
 /* Footer Caption */
 footer {
     margin-top: 30px;
-    padding: 15px;
+    padding: 18px;
     background: rgba(255, 255, 255, 0.1);
     color: #ffcc00;
-    font-size: 20px;
+    font-size: 24px;
     text-align: center;
     font-weight: bold;
     border-radius: 10px;
+    text-shadow: 0 0 15px rgba(255, 204, 0, 0.9); /* Glowing Text */
+    letter-spacing: 1px;
 }
