@@ -1,42 +1,105 @@
 /* Dark Theme */
 body {
-    background: #121212; /* Dark Background */
-    color: white; /* White Text */
-    font-family: Arial, sans-serif;
+    background: #121212;
+    color: white;
+    font-family: 'Poppins', Arial, sans-serif;
     margin: 0;
-    padding: 0;
-    font-size: 20px; /* Bigger Text */
+    padding: 20px;
+    text-align: center;
 }
 
-/* Increase Headings */
-h1, h2, h3 {
-    font-size: 26px; /* Bigger Headings */
-    font-weight: bold;
+/* Headings */
+h2 {
+    font-size: 30px;
+    color: #00c3ff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
-/* Laws List Styling */
-ul#lawsList {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 10px;
-    border-radius: 10px;
-    list-style-type: none;
+h3 {
+    font-size: 24px;
+    color: #ff7b00;
+    border-bottom: 2px solid #ff7b00;
+    padding-bottom: 5px;
+    display: inline-block;
+    margin-top: 20px;
 }
 
-/* Increase List Items Font */
-ul#lawsList li {
-    font-size: 22px; /* Bigger Law Text */
-    padding: 12px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-/* Search Box Styling */
+/* Search Box */
 #searchBox {
-    font-size: 18px; /* Bigger Search Box Text */
-    width: 100%;
+    width: 80%;
     padding: 12px;
     margin: 10px 0;
     background: #333;
     color: white;
+    border: 2px solid #00c3ff;
+    border-radius: 5px;
+    font-size: 18px;
+    text-align: center;
+}
+
+/* Law Description Box */
+#lawDescription {
+    background: rgba(0, 195, 255, 0.1);
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 195, 255, 0.5);
+    transition: 0.3s ease-in-out;
+}
+
+/* Law List as Cards */
+.lawsList {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.lawsList li {
+    background: #222;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    font-size: 18px;
+    transition: 0.3s;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.lawsList li:hover {
+    background: #00c3ff;
+    color: black;
+    border: 2px solid #ffffff;
+}
+
+/* Buttons */
+button {
+    padding: 10px 20px;
+    margin: 10px;
     border: none;
     border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Music Buttons */
+button:first-of-type {
+    background: #00c3ff;
+    color: black;
+}
+
+button:last-of-type {
+    background: #ff7b00;
+    color: white;
 }
